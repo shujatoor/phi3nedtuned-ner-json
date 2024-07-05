@@ -1,5 +1,6 @@
 # phi3nedtuned-ner-json
 - This model can be used to extract named entities such as item, quantity, price, total amount etc. from the receipts.
+- The output is in json format so its easy to extract data
 - This is an adaptor for base model microsoft/Phi-3-mini-4k-instruct and should be merged with it for deployment.
 
 # To merge the adaptor with the base model:
