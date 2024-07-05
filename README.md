@@ -1,7 +1,8 @@
 # phi3nedtuned-ner-json
 - This model can be used to extract named entities such as item, quantity, price, total amount etc. from the receipts.
 - This is an adaptor for base model microsoft/Phi-3-mini-4k-instruct and should be merged with it for deployment.
-- To merge the adaptor with the base model:
+
+# To merge the adaptor with the base model:
 
 import torch
 import os
@@ -38,7 +39,7 @@ merged_model = model.merge_and_unload()
 merged_model.save_pretrained(save_path)
 
 
-- For inference, even without merge:
+# For inference, even without merge:
   
 from peft import PeftModel, PeftConfig
 
