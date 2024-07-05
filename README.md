@@ -7,15 +7,10 @@
 ```python
 
 import torch
-
 import os
-
 from peft import PeftModel, PeftConfig
-
 from transformers import AutoModelForCausalLM
-​
 from peft import PeftModel, PeftConfig
-
 from transformers import AutoModelForCausalLM
 ​
 #path where merged model will be saved
@@ -36,7 +31,6 @@ trust_remote_code=True,
 )
 ​
 model = PeftModel.from_pretrained(model, model_dir)
-
 model.config.to_json_file('adapter_config.json')
 
 #merge
@@ -46,13 +40,11 @@ merged_model.save_pretrained(save_path)
 ```
 
 # For inference, even without merge:
-  
+
+```python
 from peft import PeftModel, PeftConfig
-
 from transformers import AutoModelForCausalLM
-
 import torch
-
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 config = PeftConfig.from_pretrained("shujatoor/phi3nedtuned-ner-json")
@@ -65,9 +57,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 model = PeftModel.from_pretrained(model, "shujatoor/phi3nedtuned-ner-json")
-
 model.config.to_json_file('adapter_config.json')
-
 
 torch.random.manual_seed(0)
 
@@ -104,4 +94,4 @@ generation_args = {
 output = pipe(messages, **generation_args)
 
 print('Answer:', output[0]['generated_text'], '\n')
-
+```
