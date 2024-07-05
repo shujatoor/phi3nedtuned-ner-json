@@ -73,7 +73,7 @@ qs = f'{text}. {q_json}'
 print('Question:',qs, '\n')
 
 messages = [
-    #{"role": "system", "content": f" Only fill the provided JSON Object. Only output the answer, nothing else. Do not give output other than the  required JSON Object {q_json}"},
+    #{"role": "system", "content": f"Only fill the provided JSON Object. Only output the answer, nothing else. Do not give output other than the  required JSON Object {q_json}"},
     {"role": "user", "content": qs},
 
 ]
