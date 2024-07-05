@@ -5,12 +5,15 @@
 # To merge the adaptor with the base model:
 
 import torch
+
 import os
 
 from peft import PeftModel, PeftConfig
+
 from transformers import AutoModelForCausalLM
 ​
 from peft import PeftModel, PeftConfig
+
 from transformers import AutoModelForCausalLM
 ​
 #path where merged model will be saved
