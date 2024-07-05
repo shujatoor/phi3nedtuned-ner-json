@@ -4,6 +4,8 @@
 
 # To merge the adaptor with the base model:
 
+```python
+
 import torch
 
 import os
@@ -41,6 +43,7 @@ model.config.to_json_file('adapter_config.json')
 merged_model = model.merge_and_unload()
 merged_model.save_pretrained(save_path)
 
+```
 
 # For inference, even without merge:
   
